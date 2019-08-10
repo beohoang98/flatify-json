@@ -1,0 +1,35 @@
+name: Publish
+on:
+  push:
+    branches:
+    - tags
+
+jobs:
+  
+  install:
+    name: Install
+    steps:
+    - uses: action/npm@master
+      args: install
+
+  build:
+    name: Build
+    steps:
+    - uses: action/npm@master
+      args: build
+      needs: install
+
+  test:
+    name: Test
+    steps:
+    - uses: action/npm@master
+      args: test
+      needs: build
+
+  publish:
+    name: Publish
+    steps:
+    - uses: action/npm@master
+      args: "publish --access public"
+      secrets: ["NPM_AUTH_TOKEN"]
+      needs: test
