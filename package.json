@@ -1,0 +1,30 @@
+{
+    "name": "@beohoang98/flatify-json",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "jest",
+        "build": "babel src --out-dir dist/",
+        "start": "npm run build"
+    },
+    "keywords": [
+        "flatify",
+        "json"
+    ],
+    "author": "beohoang98",
+    "license": "ISC",
+    "repository": {
+        "url": "https://github.com/beohoang98/flatify-json",
+        "type": "github"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "jest": "^24.8.0"
+    }
+}
